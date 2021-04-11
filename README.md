@@ -15,4 +15,6 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-![](https://raw.githubusercontent.com/bisquit/bisquit/main/profile-summary-card-output/github/0-profile-details.svg)
+![](https://raw.githubusercontent.com/bisquit/bisquit/main/profile-summary-card-output/monokai/0-profile-details.svg)
+![](https://raw.githubusercontent.com/bisquit/bisquit/main/profile-summary-card-output/monokai/2-most-commit-language.svg)
+![](https://raw.githubusercontent.com/bisquit/bisquit/main/profile-summary-card-output/monokai/3-stats.svg)
