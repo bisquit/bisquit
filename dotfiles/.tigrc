@@ -1,0 +1,64 @@
+set wrap-lines = yes
+set tab-size = 4
+set diff-context = 5
+set split-view-height = 76%
+set main-view = line-number:no id:width=4 date:local=yes author:full,width=8 commit-title:yes,graph,refs,overflow=no
+set refs-view = line-number:no id:no date:local=yes author:full,width=8 ref:width=40 commit-title
+
+color default white black
+color cursor default magenta
+color date cyan default
+color delimiter cyan default
+color line-number yellow default
+color diff-header cyan default
+color diff-index blue default
+color diff-chunk magenta default
+color "Reported-by:" green default
+color graph-commit cyan default
+color "index " cyan default
+color "diff-tree " cyan default
+color "tree " cyan default
+color "parent " cyan default
+color diff-stat cyan default
+color grep.file cyan default
+color help-group magenta default
+
+## Bindings
+#generic
+bind generic S ?git stash save %(prompt)
+
+# main
+bind main M ?git merge %(commit)
+bind main I ?git rebase -i %(commit)
+bind main n ?git checkout -b %(prompt) %(branch)
+bind main P ?git push origin %(branch)
+bind main p ?git pull upstream %(branch)
+bind main f ?git fetch
+bind main c !@bash -c "echo -n %(commit) | pbcopy"
+
+# branch
+bind branch C none
+bind branch D ?git branch -d %(branch)
+bind branch c ?git checkout %(branch)
+bind branch n ?git checkout -b %(prompt) %(branch)
+bind branch P ?git push origin %(branch)
+bind branch p ?git pull upstream %(branch)
+bind branch u ?git branch -u upstream/%(branch)
+bind branch R ?git rebase %(branch)
+bind branch M ?git merge %(branch)
+bind branch E ?git branch -m %(prompt)
+
+# status
+bind status c ?git commit -m %(prompt)
+bind status A ?git update-index --skip-worktree %(file)
+bind status + ?git commit --amend
+bind status S ?git stash save %(prompt)
+
+# stash
+bind stash ! none
+bind stash a ?git stash apply %(stash)
+bind stash D ?git stash drop %(stash)
+bind stash ! ?git stash clear
+
+# diff
+bind diff 7 !git diff %(commit)^ %(commit)
