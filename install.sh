@@ -11,9 +11,11 @@ link_file () {
 
   if [ -e "$dist" ]; then
     mv "$dist" "${dist}.backup"
+    echo "backup $dist"
   fi
 
   ln -s "$src" "$dist"
+  echo "symlink created $src => $list"
 }
 
 link_file "${DOTFILES_ROOT}/git/.gitconfig" "$HOME/.gitconfig"
