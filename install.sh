@@ -16,4 +16,4 @@ link_file () {
   ln -s "$src" "$dist"
 }
 
-link_file "${DOTFILES_ROOT}/git/.gitconfig" "~/.gitconfig"
+link_file "${DOTFILES_ROOT}/git/.gitconfig" "$HOME/.gitconfig"
