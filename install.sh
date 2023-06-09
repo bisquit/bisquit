@@ -16,7 +16,7 @@ make install
 cd ..
 
 # starship
-curl -sS https://starship.rs/install.sh | sh
+curl -sS https://starship.rs/install.sh | sh -s -- -y
 
 cd $CURRENT
 rm -rf $TMPDIR
@@ -49,4 +49,4 @@ link_file "${DOTFILES_ROOT}/git/.tigrc" "$HOME/.tigrc"
 
 # fish
 mkdir -p "$HOME/.config/fish/functions"
-link_file "${DOTFILES_ROOT}/fish/config.fish "$HOME/.config/fish/config.fish"
+link_file "${DOTFILES_ROOT}/fish/config.fish" "$HOME/.config/fish/config.fish"
