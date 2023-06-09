@@ -1,0 +1,38 @@
+[user]
+    name = shuheikikuchi
+    email = qu1dpr09u0@gmail.com 
+[core]
+    editor = vim 
+    ignorecase = false
+[alias]
+    st = status
+    co = checkout
+    cm = commit
+    br = branch
+    rb = rebase
+    df = diff
+    dfc = diff --cached
+    cp = cherry-pick
+    mt = mergetool
+    prune-tag = fetch origin --prune 'refs/tags/*:refs/tags/*'
+    delete-merged = "!f () { git branch --merged|egrep -v '\\*|main|master'|xargs git branch -d;  };f"
+[ghq]
+    root = ~/repos
+[pull]
+    rebase = false
+[merge]
+    tool = vscode
+[mergetool]
+    prompt = false
+    keepBackup = false
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+[diff]
+    tool = vscode
+[init]
+    defaultBranch = main
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
