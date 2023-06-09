@@ -11,11 +11,14 @@ link_file () {
 
   if [ -e "$dist" ]; then
     mv "$dist" "${dist}.backup"
-    echo "backup $dist"
+    echo "backup $dist as ${dist}.backup"
   fi
 
   ln -s "$src" "$dist"
-  echo "symlink created $src => $list"
+  echo "symlink created $src => $dist"
 }
 
 link_file "${DOTFILES_ROOT}/git/.gitconfig" "$HOME/.gitconfig"
+link_file "${DOTFILES_ROOT}/git/.tigrc" "$HOME/.tigrc"
+
+brew install tig
