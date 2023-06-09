@@ -1,5 +1,30 @@
 #!/bin/bash
 
+#--------------------------------------
+
+# install tools
+
+TMPDIR=$(mktemp -d)
+CURRENT=$PWD
+cd $TMPDIR
+
+# tig
+git clone https://github.com/jonas/tig.git
+cd tig
+make
+make install
+cd ..
+
+# starship
+curl -sS https://starship.rs/install.sh | sh
+
+cd $CURRENT
+rm -rf $TMPDIR
+
+#--------------------------------------
+
+# dotfiles
+
 CLONE_DIST="$HOME/bisquit"
 
 git clone https://github.com/bisquit/bisquit.git ${CLONE_DIST}
@@ -18,7 +43,10 @@ link_file () {
   echo "symlink created $src => $dist"
 }
 
+# git
 link_file "${DOTFILES_ROOT}/git/.gitconfig" "$HOME/.gitconfig"
 link_file "${DOTFILES_ROOT}/git/.tigrc" "$HOME/.tigrc"
 
-brew install tig
+# fish
+mkdir -p "$HOME/.config/fish/functions"
+link_file "${DOTFILES_ROOT}/fish/config.fish "$HOME/.config/fish/config.fish"
