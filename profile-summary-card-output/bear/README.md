@@ -52,3 +52,13 @@
 ```
 
     
+
+---
+
+![](./4-productive-time.svg)
+
+```
+![](https://raw.githubusercontent.com/bisquit/bisquit/main/profile-summary-card-output/bear/4-productive-time.svg)
+```
+
+    
